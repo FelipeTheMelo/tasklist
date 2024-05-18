@@ -64,4 +64,6 @@ ul li {
     position: relative;
     max-height: 280px;
     overflow-y: hidden;
+    text-decoration: none
 }
+

@@ -1,13 +1,26 @@
 $(document).ready(function() {
+    $('header button').click(function() {
+        $('form').slideDown();
+    })
+
+    $('#botao-cancelar').click(function() {
+        $('form').slideUp();
+    })
+    
     $('#inputTarefa').on('submit', function(e) {
         e.preventDefault();
-        let novaTarefa = $('#inputTarefa').val();
+        let novaTarefa = $('#nova-tarefa').val();
         if (novaTarefa.trim() !== '') {
-            let itemLista = $('').text(novaTarefa);
+            let itemLista = $('<li></li>').text(novaTarefa);
             $('#listaTarefas').append(itemLista);
-            $('#inputTarefa').val('');
+            $('#nova-tarefa').val('');
         } else {
-            alert('Por favor, insira uma tarefa válida.');
+            alert('Por favor, insira uma tarefa válida!');
         }
+
+        $('#listaTarefas').click(function() {
+            $('li').textDecoration(line-through)
+        })
+
     });
 });
